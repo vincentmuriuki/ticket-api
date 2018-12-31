@@ -16,7 +16,7 @@ class Ticket(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     category = models.ForeignKey("Category", on_delete=models.CASCADE)
-    ticket_id = Models.CharField(max_length=200, blank=True)
+    ticket_id = models.CharField(max_length=200, blank=True)
     created = models.DateTimeField(auto_now=True)
     modified = models.DateTimeField(auto_now_add=True)
 
