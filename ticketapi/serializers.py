@@ -16,7 +16,7 @@ class TicketSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'title', 'ticket_id', 'user', 'content', 'category', 'created', 'modified')
 
 # Serializers define the API representation
-class CategorySErializer(serializers.HyperlinkedModelSerializer):
+class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Category
         fields = ('name', 'slug')

@@ -1,3 +1,23 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 
-# Create your views here.
+
+# Standard library imports
+# from django.shortcuts impport render
+from rest_framework import routers, serializers, viewsets
+# Local Imports
+from ticketapi.serializers import UserSerializer, TicketSerializer, CategorySerializer
+from django.contrib.auth.models import User
+from tickets.models import Ticket, Category
+
+# ViewSets define the view behavior
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = TicketSerializer
+
+class TicketViewSet(viewsets.ModelViewSet):
+    queryset = Ticket.objects.all()
+    serializer_class = TicketSerializer
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
